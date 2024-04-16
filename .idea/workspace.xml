@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55851b94-4935-420b-ba86-b8f07c0d35b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/bai tap vd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/m1.ss7.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/m1.ss7.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/form and table.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitgit.txt.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitgit2.txt.txt" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/m1_ss7_Shinhtron.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/m1_ss7_chuvihinhtron.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m1_ss7.html.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -76,7 +72,7 @@
       <workItem from="1712668778853" duration="2794000" />
       <workItem from="1712754247754" duration="3956000" />
       <workItem from="1713007400989" duration="5897000" />
-      <workItem from="1713223380035" duration="1190000" />
+      <workItem from="1713223380035" duration="2944000" />
     </task>
     <servers />
   </component>
