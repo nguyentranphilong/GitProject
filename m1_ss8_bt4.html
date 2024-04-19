@@ -6,24 +6,25 @@
 </head>
 <body>
 <script>
+    //***Cách 1***
     // let numbera = +prompt("a");
     // let numberb = +prompt("b");
     // let numberc = +prompt("c");
     // let maxvalue = Math.max (numbera, numberb, numberc);
     // document.write("giá trị lớn nhất là:" + maxvalue)
-    // let numbera = +prompt("a");
-    // let numberb = +prompt("b");
-    // let numberc = +prompt("c");
-    // let maxvalue;
-    // if (numbera>numberb && numbera>numberc){
-    //     maxvalue=numbera;
-    // }
-    // else if (numberb>numbera && numberb>numberc){
-    //     maxvalue=numberb;
-    //     else {maxvalue=numberc;}
-    // }
-    // document.write("số lớn nhất là:" + maxvalue)
-    // Nhập ba số nguyên từ người dùng
+    //***cách 2***
+    let numbera = +prompt("a");
+    let numberb = +prompt("b");
+    let numberc = +prompt("c");
+    let maxvalue;
+    if (numbera>numberb && numbera>numberc){
+        maxvalue=numbera;
+    }
+    else if (numberb>numbera && numberb>numberc){
+        maxvalue=numberb;}
+        else {maxvalue=numberc;}
+
+    document.write("số lớn nhất là:" + maxvalue);
 
 </script>
 
