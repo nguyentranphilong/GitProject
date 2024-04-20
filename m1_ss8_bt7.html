@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbera = +prompt("số phút gọi điện");
+    if (numbera <= 50){
+        document.write("giá cước điện thoại:" + numbera*1000 + "vnđ");
+    }
+    else if (numbera <= 100){
+        document.write("giá cước điện thoại:" + (50*1000+(numbera-50)*2000) + "vnđ");
+    }
+    else {
+        document.write("giá cước điện thoại:" + (50*1000+50*2000+(numbera-100)*2500) + "vnđ");
+    }
+</script>
+
+</body>
+</html>
