@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(mass) {
+            this.mass = mass;
+        }
+        getMass() {
+            return this.mass;
+        }
+    }
+    class Human {
+        constructor(name1,name2,weight) {
+            this.name1 = name1;
+            this.name2 = name2;
+            this.weight = weight;
+        }
+        eatApple(apple) {
+            if  (apple.getMass()>0){
+                this.weight += 1;
+                apple.mass -= 1;
+                document.write(this.name1 + "đã ăn 1 miếng táo.")
+
+            }
+        }
+        
+    }
+</script>
+</body>
+</html>
