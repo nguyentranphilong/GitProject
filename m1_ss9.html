@@ -6,9 +6,19 @@
 </head>
 <body>
 <script>
-
-    const mydate = new mydate(10,5,2024);
-    document.write()
+    let number = +prompt("nhập vào 1 số:");
+    let count = 0
+    for (let i = 2;i <= Math.sqrt(number); i++){
+        if (number % i === 0){
+            count++;
+        }
+    }
+    if (count===0) {
+        document.write(number + " là số nguyên tố")
+    }else {
+        document.write(number + " không phải là số nguyên tố")
+    }
 </script>
+
 </body>
 </html>
