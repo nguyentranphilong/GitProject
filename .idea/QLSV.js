@@ -1,5 +1,5 @@
-class Classstudent {
-    constructor(fullname, email, phone, address, birthday, gender) {
+class Classstudents {
+    constructor({fullname, email, phone, address, birthday, gender}) {
         this.fullname = fullname;
         this.email = email;
         this.phone = phone;
@@ -7,91 +7,175 @@ class Classstudent {
         this.birthday = birthday;
         this.gender = gender;
     }
-    getFullname() {
-        return this.fullname;
-    }
-    setFullname(fullname) {
+
+    getfullname() {
+        return this.fullname}
+    getemail() {
+        return this.email}
+    getphone() {
+        return this.phone}
+    getaddress() {
+        return this.address}
+    getbirthday() {
+        return this.birthday}
+    getgender() {
+        return this.gender}
+    setfullname(fullname) {
+        this.fullname = fullname}
+    setemail(email) {
+        this.email = email}
+    setphone(phone) {
+        this.phone = phone}
+    setaddress(address) {
+        this.address = address}
+    setbirthday(birthday) {
+        this.birthday = birthday}
+    setgender(gender) {
+        this.gender = gender}
+
+    // them {}
+    edit({fullname, email, phone, address, birthday, gender}) {
         this.fullname = fullname;
-    }
-    getEmail() {
-        return this.email;
-    }
-    setEmail(email) {
         this.email = email;
-    }
-    getPhone() {
-        return this.phone;
-    }
-    setPhone(phone) {
         this.phone = phone;
-    }
-    getAddress() {
-        return this.address;
-    }
-    setAddress(address) {
         this.address = address;
-    }
-    getBirthday() {
-        return this.birthday;
-    }
-    setBirthday(birthday) {
         this.birthday = birthday;
-    }
-    getGender() {
-        return this.gender;
-    }
-    setGender(gender) {
         this.gender = gender;
     }
-
-
 }
-let student1 = new Classstudent("Trần Thị Hoàng Giang", "giangtran@gmail.com", 0963554244, "Đà Nẵng", "07/12/2008", "Nữ",)
-let student2 = new Classstudent("Nguyễn Hồ Minh Hải", "minhhai@gmail.com", 0933226297, "Đà Nẵng", "08/03/1999", "Nam",)
-let student3 = new Classstudent("Nguyễn Văn Anh Minh", "nguyenvananhminh@gmail.com", 0934656565, "Đà Nẵng", "14/11/2005", "Nam",)
+
+
+let student1 = new Classstudents({
+    fullname: "Nguyễn Văn Minh",
+    email: "nguyenvanminh@gmail.com",
+    phone: "0933226297",
+    address: "Đà Nẵng",
+    birthday: "08/03/1999",
+    gender: "Nam",
+})
+let student2 = new Classstudents({
+    fullname: "Nguyễn Văn Anh",
+    email: "nguyenvananh@gmail.com",
+    phone: "0934656565",
+    address: "Đà Nẵng",
+    birthday: "14/11/2005",
+    gender: "Nam",
+})
+let student3 = new Classstudents({
+    fullname: "Nguyễn Văn Thịnh",
+    email: "nguyenvanthinh@gmail.com",
+    phone: "0934656565",
+    address: "Đà Nẵng",
+    birthday: "14/11/2005",
+    gender: "Nữ",
+})
 
 let students = [student1, student2, student3];
+
 function display() {
-    let fullname = document.getElementById('fullname').value;
-    let email = document.getElementById('email').value;
-    let phone = document.getElementById('phone').value;
-    let address = document.getElementById('address').value;
-    let birthday = document.getElementById('date').value;
-    let gender = '';
-    if (document.getElementById('male').checked) {
-        gender = document.getElementById('male').value;
-    } else if (document.getElementById('female').checked) {
-        gender = document.getElementById('female').value;
-    }
-    let tableContent = ` <tr>
-            <th>#</th>
-            <th>Họ và tên</th>
-            <th>Ngày sinh</th>
-            <th>Địa chỉ</th>
-            <th>Email</th>
-            <th>Số điện thoại</th>
-            <th>Giới tính</th>
-            <th>Hành động</th>
-        </tr>`;
+    let str = ""
     for (let i = 0; i < students.length; i++) {
-        tableContent += ` <tr>
-            <td>${i + 1}</td>
-            <td>${students[i].fullname}</td>
-            <td>${students[i].birthday}</td>
-            <td>${students[i].address}</td>
-            <td>${students[i].email}</td>
-            <td>${students[i].phone}</td>
-            <td>${students[i].gender}</td>
-            <td>
-                <button onclick="editStudent(${i})" >sửa</button>
-                <button onclick="deleteStudent(${i})">Xóa</button>
-            </td>
-        </tr>`;
+        str += "<tr>";
+        str += "<td>"+ (i+1) +"</td>";
+        str += "<td>"+ students[i].fullname +"</td>";
+        str += "<td>"+ students[i].email +"</td>";
+        str += "<td>"+ students[i].phone +"</td>";
+        str += "<td>"+ students[i].address +"</td>";
+        str += "<td>"+ students[i].birthday +"</td>";
+        str += "<td>"+ students[i].gender +"</td>";
+        str += "<td><button onclick='editStudent("+ i +")'>Sửa</button></td>";
+        str += "<td><button onclick='deleteStudent("+ i +")'>Xóa</button></td>";
+        str += "</tr>";
     }
-    document.getElementById('list-students').innerHTML = tableContent;
+    document.getElementById('display').innerHTML = str;
 }
 display();
-function save() {
+
+// Rename fucntion to specified name
+function addStudent() {let fullname = document.getElementById('fullname').value;
+    let email = document.getElementById('email').value;
+    let phone = document.getElementById('phone').value;
+    let address = document.getElementById('address').value;
+    let birthday = document.getElementById('date').value;
+    let gender = '';
+    if (document.getElementById('male').checked) {
+        gender = document.getElementById('male').value;
+    } else if (document.getElementById('female').checked) {
+        gender = document.getElementById('female').value;
+    }
+    if (fullname == "" || email == "" || phone == "" || address == "" || birthday == "" || gender == "") {
+        alert("Vui lòng nhập đầy đủ thông tin");
+        return;
+    }
+    let student = new Classstudents({fullname, email, phone, address, birthday, gender});
+    students.push(student);
+    display();
+    clearStudent();
+
+
+}
+
+// function formatDate(inputDate) {
+//     // Split the date string into components using regex
+//     var parts = inputDate.match(/(\d+)/g);
+//
+//     // Rearrange the components to match "yyyy-MM-dd" format
+//     var formattedDate = parts[2] + '-' + parts[0] + '-' + parts[1];
+//
+//     return formattedDate;
+// }
+
+function assignStudent(student){
+    document.getElementById('fullname').value = student.fullname;
+    document.getElementById('email').value = student.email;
+    document.getElementById('phone').value = student.phone;
+    document.getElementById('address').value = student.address;
+    // luôn để ý kiểu dữ liệu:
+
+        document.getElementById('date').value = student.birthday;
+    if (student.gender ==="Nam"){
+        document.getElementById('male').checked = true
+        document.getElementById('female').checked = false;
+    }else if (student.gender ==="Nữ"){
+        document.getElementById('male').checked = false
+        document.getElementById('female').checked = true;
+    }else {
+        document.getElementById('male').checked = false;
+        document.getElementById('female').checked = false;
+    }
+}
+// function formatDate(inputDate) {
+//     // Split the date string into components using regex
+//     var parts = inputDate.match(/(\d+)/g);
+//
+//     // Rearrange the components to match "yyyy-MM-dd" format
+//     var formattedDate = parts[2] + '-' + parts[0] + '-' + parts[1];
+//
+//     return formattedDate;
+// }
+function clearStudent() {
+    let emptyStudent = new Classstudents({
+        fullname: "",
+        email: "",
+        phone: "",
+        address: "",
+        birthday: "",
+        gender: "",
+    });
+    assignStudent(emptyStudent)
+}
+
+function editStudent(index) {
+    let check = confirm("bạn có chắc muốn sửa STT " + (index + 1))
+    if (check) {
+    assignStudent(students[index])
+    document.getElementById('id').value = index;
+}else alert("giỡn hoài ní");}
+
+
+//  nên gọi submit từ form và nhận value về, không sử dụng docuemnt.getElementById
+function updateStudent(index) {
+    let idStudent = document.getElementById('id').value
     let fullname = document.getElementById('fullname').value;
     let email = document.getElementById('email').value;
     let phone = document.getElementById('phone').value;
@@ -103,20 +187,17 @@ function save() {
     } else if (document.getElementById('female').checked) {
         gender = document.getElementById('female').value;
     }
-    let student = new Classstudent(fullname, email, phone, address, birthday, gender);
-    students.push(student);
+    if (fullname == "" || email == "" || phone == "" || address == "" || birthday == "" || gender == "") {
+        alert("Vui lòng nhập đầy đủ thông tin");
+        return;
+    }
+    let currentStudent = students[idStudent]
+    currentStudent.edit({fullname, email, phone, address, birthday, gender})
+
     display();
-    clear();
+    clearStudent();
 }
-function clear() {
-    document.getElementById('fullname').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('phone').value = '';
-    document.getElementById('address').value = '';
-    document.getElementById('date').value = '';
-    document.getElementById('male').checked = false;
-    document.getElementById('female').checked = false;
-}
+
 
 function deleteStudent(index) {
     let check = confirm("bạn có chắc muốn xóa STT " + (index + 1))
@@ -125,8 +206,5 @@ function deleteStudent(index) {
         display();
     }else alert("quái quái rứa trời");
 }
-function editStudent(index) {
 
-
-}
 

@@ -8,7 +8,7 @@ body {
     margin : 0px;
 }
 
-div.form_student, div.list_student{
+form.form_student, div.list_student{
     width: 1450px;
     border: 1px solid #ccc;
     margin : 25px;
@@ -24,16 +24,16 @@ h3 {
     padding :0px;
     margin-top: 0px;
 }
-div.form_student label {
+form.form_student label {
     width: 150px;
     float: left;
 }
-div.form_student input[type="text"],[type="email"]{
+form.form_student input[type="text"],[type="email"]{
     margin-bottom: 10px;
     width: 300px;
     padding: 5px;
 }
-div.form_student button{
+form.form_student button{
     text-align: center;
     margin-bottom: 10px;
     width: 200px;
@@ -42,7 +42,7 @@ div.form_student button{
     border-radius: 10px;
     border: 1px solid #B9B8D9
 }
-div.form_student button:hover{
+form.form_student button:hover{
     background-color: #635FD9;
     color: white;
 }
