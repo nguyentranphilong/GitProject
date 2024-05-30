@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table width="1000" border="1" cellpadding="0" cellspacing="0">
+    <tr>
+        <td style="text-align: center">Mã sổ</td>
+        <td style="text-align: center">Loại tiết kiệm</td>
+        <td style="text-align: center">Họ & tên khách</td>
+        <td style="text-align: center">CMND</td>
+        <td style="text-align: center">Ngày mở sổ</td>
+        <td style="text-align: center">Số tiền gửi</td>
+        <td style="text-align: center">Hành động</td>
+    </tr>
+    <tbody id="display"></tbody>
+
+</table>
+<button onclick="addSTK()">thêm khách hàng</button>
+<script>
+    class SOTIETKIEM {
+        constructor(id, type, fullname, cmnd, date, money) {
+            this.id = id;
+            this.type = type;
+            this.fullname = fullname;
+            this.cmnd = cmnd;
+            this.date = date;
+            this.money = money;
+        }
+
+        getid() {
+            return this.id;
+        }
+
+        setid(id) {
+            this.id = id;
+        }
+
+        gettype() {
+            return this.type;
+        }
+
+        settype(type) {
+            this.type = type;
+        }
+
+        getfullname() {
+            return this.fullname;
+        }
+
+        setfullname(fullname) {
+            this.fullname = fullname;
+        }
+
+        getcmnd() {
+            return this.cmnd;
+        }
+
+        setcmnd(cmnd) {
+            this.cmnd = cmnd;
+        }
+
+        getdate() {
+            return this.date;
+        }
+
+        setdate(date) {
+            this.date = date;
+        }
+
+        getmoney() {
+            return this.money;
+        }
+
+        setmoney(money) {
+            this.money = money;
+        }
+    }
+    let STK1 = new SOTIETKIEM(1, "lãi kép", "Trần Siêu", 202411111, "20/04/2024", 2000000)
+    let STK2 = new SOTIETKIEM(2, "lãi đơn", "Trần Văn Vui", 202473663, "16/05/2024", 5000000)
+    
+    let arr = [STK1, STK2];
+
+    function display() {
+        let str = ""
+        for (let i = 0; i < arr.length; i++) {
+            str += "<tr>";
+            str += "<td>"+ arr[i].id +"</td>";
+            str += "<td>"+ arr[i].type +"</td>";
+            str += "<td>"+ arr[i].fullname +"</td>";
+            str += "<td>"+ arr[i].cmnd +"</td>";
+            str += "<td>"+ arr[i].date +"</td>";
+            str += "<td>"+ arr[i].money +"</td>";
+            str += "<td><button onclick='deletearr("+ i +")'>Xóa</button></td>";
+            str += "</tr>";
+        }
+        document.getElementById('display').innerHTML = str;
+    }
+    display();
+    function addSTK(index) {
+      let id = +prompt("nhập mã sổ");
+        let type = prompt("nhập loại tiết kiệm");
+        let fullname = prompt("nhập họ tên khách hàng");
+        let cmnd = +prompt("số CMND");
+        let date = prompt("ngày mở sổ");
+        let money = +prompt("số tiên gửi");
+       let newSOTIETKIEM = new SOTIETKIEM(id, type, fullname, cmnd, date, money);
+       arr.push(newSOTIETKIEM);
+        alert("added");
+        display();
+    }
+    function deletearr(index){
+        let check = confirm("bạn có chắc muốn xóa không?")
+        if (check) {
+            arr.splice(index, 1);
+            display();
+        }else alert("quái quái rứa trời");
+    }
+
+
+</script>
+
+</body>
+</html>
